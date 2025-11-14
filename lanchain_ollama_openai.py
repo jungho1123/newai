@@ -14,7 +14,7 @@ load_dotenv()
 # 2. Ollama 채팅 모델 초기화
 llm_ollama = ChatOllama(
     base_url="http://localhost:11434",
-    model="gemma3:1b"
+    model="gemma3:12b"
 )
 
 # 3. 프롬프트 템플릿 생성
@@ -45,7 +45,7 @@ response = llm_openai.invoke(prompt)
 
 ##### 슬랙 메시지 보내기기
 print("기본 채널로 알림 전송 시도...")
-user_name = "jslee82"
+user_name = "jh20223780"
 success = send_slack_message(response.content,"jslee82")
 
 if success:

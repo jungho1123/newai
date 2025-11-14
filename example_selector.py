@@ -60,7 +60,7 @@ print(dynamic_prompt.format(adjective="windy"))  # windy
 # 변경 예시: IP 주소 192.168.1.10의 12345 포트를 사용하는 경우
 llm = ChatOllama(
     base_url="http://localhost:11434",
-    model="gemma3:1b"
+    model="gemma3:12b"
 )
 
 # 5. 체인 실행

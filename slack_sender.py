@@ -71,7 +71,7 @@ if __name__ == "__main__":
     # 이 파일(slack_sender.py)을 직접 실행할 때만 아래 코드가 동작합니다.
     
     print("--- 1. 기본 채널(.env)로 테스트 메시지 전송 ---")
-    test_message_1 = "안녕하세요! 함수를 통해 보내는 테스트 메시지입니다." + " [by jslee82]"
+    test_message_1 = "안녕하세요! 함수를 통해 보내는 테스트 메시지입니다." + " [jh20223780]"
     send_slack_message(test_message_1)
 
     print("\n--- 2. 특정 채널(예: '#random')을 지정하여 테스트 메시지 전송 ---")

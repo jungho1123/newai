@@ -25,7 +25,7 @@ load_dotenv()
 # ------------------------------------------------------------------
 llm_ollama = ChatOllama(
     base_url="http://localhost:11434",  # 필요 시 'http://192.168.1.10:12345' 등으로 변경
-    model="gemma3:1b"
+    model="gemma3:12b"
 )
 
 llm_openai = ChatOpenAI(model="gpt-4o-mini")  # OPENAI_API_KEY 필요
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     print("\n[Slack Message Preview]\n", slack_message)
 
     # Slack 전송 (채널/사용자 지정)
-    target = "jslee82"  # 채널/사용자 식별자에 맞게 사용하세요
+    target = "jh20223780"  # 채널/사용자 식별자에 맞게 사용하세요
     print("\n기본 채널로 알림 전송 시도...")
     success = send_slack_message(slack_message, target)
 

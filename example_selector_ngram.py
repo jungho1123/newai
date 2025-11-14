@@ -1,5 +1,6 @@
 from langchain_core.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain_community.example_selectors import NGramOverlapExampleSelector
+from langchain_ollama import ChatOllama
 
 # 1. 예제 데이터
 examples = [
@@ -29,6 +30,7 @@ dynamic_prompt = FewShotPromptTemplate(
     input_variables=["sentence"],
     example_separator="\n\n"
 )
-
-# 5. 프롬프트 생성 테스트
-print(dynamic_prompt.format(sentence="Spot can run fast."))
+llm = ChatOllama(base_url="http://localhost:11434", model="gemma3:12b")
+chain = dynamic_prompt | llm
+response = chain.invoke({"sentence": "Spot can run fast."})
+print(response.content)

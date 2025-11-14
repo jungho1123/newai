@@ -1,9 +1,15 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 from dotenv import load_dotenv
-import os
+from langchain_hub import hub
 
+import os
 load_dotenv()
+
+# Create a LANGSMITH_API_KEY in Settings > API Keys
+from langsmith import Client
+client = Client(api_key=os.getenv("LANGSMITH_API_KEY"))
+prompt = client.pull_prompt("hardkothari/prompt-maker", include_model=True)
 
 # 2. Ollama 채팅 모델 초기화
 # model 파라미터에 로컬에 설치된 모델 이름을 지정합니다.
